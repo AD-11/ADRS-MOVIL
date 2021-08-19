@@ -364,3 +364,10 @@ mapa.addEventListener("click", function(){
   //window.open es para abrir enlace en otra pestaña del navegador
 });
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('../sw.js').then( () => {
+      console.log('Service Worker Registered')
+    });
+  });
+}
